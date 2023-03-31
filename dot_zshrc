@@ -1,0 +1,71 @@
+# https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout
+# This file is read when interactive
+
+
+# >>> Autocompletion >>>
+# https://stackoverflow.com/questions/24513873
+autoload -Uz compinit && compinit
+# <<< Autocompletion <<<
+
+
+# >>> GPG >>>
+# https://stackoverflow.com/questions/39494631/
+export GPG_TTY=$(tty)
+# <<< GPG <<<
+
+
+# >>> Homebrew >>>
+if $(which brew > /dev/null 2>&1); then
+    eval "$(brew shellenv)"
+fi
+# <<< Homebrew <<<
+
+
+# >>> Starship >>>
+if $(which starship > /dev/null 2>&1); then
+    eval "$(starship init zsh)"
+fi
+# <<< Starship <<<
+
+
+# >>> jenv >>>
+if $(which jenv > /dev/null 2>&1); then
+    eval "$(jenv init -)"
+fi
+# <<< jenv <<<
+
+
+# >>> McFly >>>
+# https://lib.rs/crates/mcfly
+if $(which mcfly > /dev/null 2>&1); then
+    eval "$(mcfly init zsh)"
+fi
+# <<< McFly <<<
+
+
+# >>> zoxide >>>
+# https://lib.rs/crates/zoxide
+if $(which zoxide > /dev/null 2>&1); then
+    eval "$(zoxide init zsh)"
+fi
+# <<< zoxide <<<
+
+
+# Python linting
+alias lint="isort . && black . && flake8 . && mypy ."
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/bogeholm/mambaforge-pypy3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/bogeholm/mambaforge-pypy3/etc/profile.d/conda.sh" ]; then
+        . "/Users/bogeholm/mambaforge-pypy3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/bogeholm/mambaforge-pypy3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

@@ -1,0 +1,8 @@
+alt-tab
+bettertouchtool
+dbeaver-community
+iterm2
+jupyter-notebook-viewer
+keepassxc
+rectangle
+wireshark
