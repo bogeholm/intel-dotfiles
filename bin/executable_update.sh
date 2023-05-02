@@ -18,16 +18,9 @@ info "Updating Homebrew"
 brew update && brew upgrade
 brew cleanup
 
-# Cargo installed binaries
-info "Updating Cargo packages"
-cargo install-update -a
-
 # https://pypa.github.io/pipx/docs/
 info "Updating pipx packages"
 pipx upgrade-all
-
-info "Updateing global node packages"
-npm update -g
 
 # `tldr` index
 info "Updating tldr index"

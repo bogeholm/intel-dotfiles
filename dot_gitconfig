@@ -1,7 +1,7 @@
 [user]
-    email = name@example.com
-    name = Name Namesen
-    signingkey = difficult to remember
+    email = troelsmikkelsen@gmail.com.com
+    name = Troels Mikkelsen
+	signingkey = 6E220912DD124D95
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f

@@ -1,8 +1,9 @@
 alt-tab
-bettertouchtool
-dbeaver-community
-iterm2
-jupyter-notebook-viewer
+bitwarden
+julia
 keepassxc
+macfuse
 rectangle
-wireshark
+sublime-text
+veracrypt
+visual-studio-code
